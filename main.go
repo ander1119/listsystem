@@ -3,15 +3,15 @@ package main
 import (
 	"net/http"
 
-	"github.com/ander1119/listsystem/controllers"
-	"github.com/ander1119/listsystem/models"
+	"listsystem/controllers"
+	"listsystem/models"
 )
 
 func main() {
 	handler := controllers.New()
 
 	server := &http.Server {
-		Addr:	"127.0.0.1:5432",
+		Addr:	"0.0.0.0:8008",
 		Handler: handler,
 	}
 
