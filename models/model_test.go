@@ -41,7 +41,6 @@ func TestPageInputValidation(t *testing.T) {
 func TestHeadInputValidation(t *testing.T) {
 	// valid input
 	validInput := HeadInput{
-		ListKey:    "test_list_key",
 		NextPageKey: "test_next_page_key",
 	}
 	validate := validator.New()
@@ -61,7 +60,6 @@ func TestHeadInputValidation(t *testing.T) {
 
 	// another invalid input
 	invalidInput2 := HeadInput{
-		ListKey:    "",
 		NextPageKey: "",
 	}
 

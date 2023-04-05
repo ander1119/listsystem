@@ -18,7 +18,6 @@ type Head struct {
 }
 
 type HeadInput struct {
-	ListKey		string `json:"list_key" validate:"required"`
 	NextPageKey string `json:"next_page_key" validate:"required"`
 }
 

@@ -82,7 +82,7 @@ func InsertHead(w http.ResponseWriter, r *http.Request) {
 	}
 
 	head := &models.Head{
-		ListKey: input.ListKey,
+		ListKey: uuid.NewString(),
 		NextPageKey: input.NextPageKey,
 		CreateAt: time.Now().Unix(),
 		UpdateAt: time.Now().Unix(),
