@@ -19,11 +19,11 @@ func New() http.Handler {
 	router.HandleFunc("/head", InsertHead).Methods("POST")
 	router.HandleFunc("/page", InsertPage).Methods("POST")
 
-	router.HandleFunc("/resetHead", resetHead).Methods("POST")
-	router.HandleFunc("/resetPage", resetPage).Methods("POST")
+	router.HandleFunc("/resetHeads", resetHead).Methods("DELETE")
+	router.HandleFunc("/resetPages", resetPage).Methods("DELETE")
 	
-	router.HandleFunc("/deletePages", deletePages).Methods("POST")
-	router.HandleFunc("/deleteHeads", deleteHeads).Methods("POST")
+	router.HandleFunc("/deletePages", deletePages).Methods("DELETE")
+	router.HandleFunc("/deleteHeads", deleteHeads).Methods("DELETE")
 
 	return router
 }
