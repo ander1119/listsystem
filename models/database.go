@@ -9,16 +9,18 @@ import (
 
 var DB *gorm.DB
 
-func connectDatabase() {
+func ConnectDatabase() {
 	dsn := fmt.Sprintf(
-		"user=%s paassword=%s dbname=%s",
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
+		"host=%s user=%s password=%s dbname=%s",
+		os.Getenv("PGHOST"),
+		os.Getenv("PGUSER"),
+		os.Getenv("PGPASSWORD"),
+		os.Getenv("PGDATABASE"),
 	)
 	database, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {
-		panic("Failed to connetc to database")
+		panic("Failed to connect to database")
 	}
 
 	database.AutoMigrate(&Head{}, &Page{})
